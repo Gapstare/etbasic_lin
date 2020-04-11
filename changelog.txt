@@ -1,0 +1,5 @@
+Gapstare's changes to v1.01
+
+* Replaced SYSTEM command with QUIT.
+* Added #include <stdlib.h> to basic.c to suppress a compiler warning.
+* Changed program output so that it sounds better grammatically (to me).

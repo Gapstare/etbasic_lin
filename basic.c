@@ -1,11 +1,13 @@
 /*
-	TOYOSHIKI TinyBASIC V1.0
+	TOYOSHIKI TinyBASIC V1.01
 	Linux edition
+	(C)2020 Gapstare
 	(C)2015 Tetsuya Suzuki
 */
 
 // Compiler requires description
 #include <stdio.h>
+#include <stdlib.h>
 #include <termios.h>
 #include <unistd.h>
 #include <fcntl.h>
@@ -85,7 +87,7 @@ const char* kwtbl[] = {
 	"-", "+", "*", "/", "(", ")",
 	">=", "#", ">", "=", "<=", "<",
 	 "@", "RND", "ABS", "SIZE",
-	"LIST", "RUN", "NEW", "SYSTEM"
+	"LIST", "RUN", "NEW", "QUIT"
 };
 
 // i-code(Intermediate code) assignment
@@ -98,7 +100,7 @@ enum{
 	I_MINUS, I_PLUS, I_MUL, I_DIV, I_OPEN, I_CLOSE,
 	I_GTE, I_SHARP, I_GT, I_EQ, I_LTE, I_LT,
 	I_ARRAY, I_RND, I_ABS, I_SIZE,
-	I_LIST, I_RUN, I_NEW, I_SYSTEM,
+	I_LIST, I_RUN, I_NEW, I_QUIT,
 	I_NUM, I_VAR, I_STR,
 	I_EOL
 };
@@ -1245,7 +1247,7 @@ void error() {
 		else
 		{
 			newline();
-			c_puts("YOU TYPE: ");
+			c_puts("YOU TYPED: ");
 			c_puts(lbuf);
 		}
 	}
@@ -1279,7 +1281,7 @@ void basic(){
 			continue; // Do nothing
 		}
 
-		if(*ibuf == I_SYSTEM){
+		if(*ibuf == I_QUIT){
 			return;
 		}
 

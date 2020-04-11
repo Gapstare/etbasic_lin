@@ -1,7 +1,8 @@
 /*
 	TOYOSHIKI Tiny BASIC for Linux
+	(C)2020 Gapstare
 	(C)2015 Tetsuya Suzuki
-	Build: cc ttbasic.c basic.c -o ttbasic
+	Build: cc ttbasic.c basic.c -o ttbasic (or use Makefile)
 */
 
 #include <stdlib.h>
