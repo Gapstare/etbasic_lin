@@ -1,9 +1,14 @@
-SHELL = /bin/sh
 
 all: ttbasic
 
-ttbasic : ttbasic.c basic.c
-	cc -s ttbasic.c basic.c -o ttbasic
-clean:
-	rm ttbasic
+ttbasic : ttbasic.o basic.o
+	cc -s ttbasic.o basic.o -o ttbasic
 
+ttbasic.o : ttbasic.c
+	cc -c ttbasic.c
+
+basic.o : basic.c
+	cc -c basic.c
+
+clean:
+	rm -f ttbasic *.o *~
