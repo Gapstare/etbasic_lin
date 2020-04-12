@@ -26,16 +26,14 @@ The grammar is the same as<br>
 PALO ALTO TinyBASIC by Li-Chen Wang<br>
 Except 4 point to show below.
 
-(1)The contracted form of the description is invalid.
-
-(2)Force abort key<br>
+1. The contracted form of the description is invalid.
+2. Force abort key<br>
 PALO ALTO TinyBASIC -> [Ctrl]+[C]<br>
 TOYOSHIKI TinyBASIC -> [ESC]
+3. SYSTEM command<br>
+~~SYSTEM~~ QUIT return to Linux.
+4. Other some beyond my expectations.
 
-(3)SYSTEM command<br>
-SYSTEM return to Linux.
-
-(4)Other some beyond my expectations.
-
+(C)2020 Gapstare
 (C)2015 Tetsuya Suzuki<br>
 GNU General Public License
