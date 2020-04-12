@@ -1,7 +1,8 @@
 TOYOSHIKI Tiny BASIC for Linux
 
-The code tested in Raspberry Pi Debian Wheezy.<br>
-Use UART terminal.
+The code is tested on Raspberry Pi Raspbian Stretch, Trisquel GNU/Linux
+Flidas (8.0) and NetBSD/i386 9.0<br>
+Use UART terminal (if you want to?).
 
 Operation example
 
@@ -34,6 +35,6 @@ TOYOSHIKI TinyBASIC -> [ESC]
 ~~SYSTEM~~ QUIT return to Linux.
 4. Other some beyond my expectations.
 
-(C)2020 Gapstare
+(C)2020 Gapstare<br>
 (C)2015 Tetsuya Suzuki<br>
 GNU General Public License
