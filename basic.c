@@ -24,7 +24,15 @@
 
 // Depending on device functions
 // TO-DO Rewrite these functions to fit your machine
+#ifdef __linux__
 #define STR_EDITION "LINUX"
+#elif defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__APPLE__)
+#define STR_EDITION "BSD"
+#elif defined(_WIN32)
+#define STR_EDITION "WINDOW$"
+#else
+#define STR_EDITION "UNKNOWN"
+#endif
 
 // Terminal control
 #define c_putch(c) putchar(c)
@@ -82,7 +90,7 @@ const char* kwtbl[] = {
 	"GOTO", "GOSUB", "RETURN",
 	"FOR", "TO", "STEP", "NEXT",
 	"IF", "REM", "STOP",
-	"INPUT", "PRINT", "LET",
+	"INPUT", "PRINT", "?", "LET",
 	",", ";",
 	"-", "+", "*", "/", "(", ")",
 	">=", "#", ">", "=", "<=", "<",
@@ -95,7 +103,7 @@ enum{
 	I_GOTO, I_GOSUB, I_RETURN,
 	I_FOR, I_TO, I_STEP, I_NEXT,
 	I_IF, I_REM, I_STOP,
-	I_INPUT, I_PRINT, I_LET,
+	I_INPUT, I_PRINT, I_QMARK, I_LET,
 	I_COMMA, I_SEMI,
 	I_MINUS, I_PLUS, I_MUL, I_DIV, I_OPEN, I_CLOSE,
 	I_GTE, I_SHARP, I_GT, I_EQ, I_LTE, I_LT,
@@ -1127,11 +1135,16 @@ unsigned char* iexe() {
 			cip++;
 			iprint();
 			break;
+		case I_QMARK:
+			cip++;
+			iprint();
+			break;
+			
 		case I_INPUT:
 			cip++;
 			iinput();
 			break;
-
+			
 		case I_SEMI:
 			cip++;
 			break;
