@@ -1,4 +1,6 @@
-TOYOSHIKI Tiny BASIC for Linux
+TOYOSHIKI Tiny BASIC for Unix-like operating systems.
+
+RIPPING OFF MICRO$OFT SINCE 1976!
 
 The code is tested on Raspberry Pi Raspbian Stretch, Trisquel GNU/Linux
 Flidas (8.0) and NetBSD/i386 9.0<br>
